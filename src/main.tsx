@@ -46,7 +46,7 @@ export const Main = () => {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/article/*' element={<List />} />
-                <Route path='/other/:name' element={<Other md={null} h1={null} />} />
+                <Route path='/other/:name' element={<Other />} />
                 <Route path='/tools/*' element={<Tool />} />
                 <Route path='*' element={<NotFound />} />
               </Routes>

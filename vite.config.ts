@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
+// import { markdown } from './src/components/md/mdToJs'
 
 const resolve = require('path').resolve
 // https://vitejs.dev/config/

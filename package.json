@@ -7,6 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "highlight.js": "^11.3.1",
+    "marked": "^4.0.8",
     "moment": "^2.29.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

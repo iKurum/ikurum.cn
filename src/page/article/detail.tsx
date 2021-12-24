@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 import { useParams } from "react-router";
 import port from "@/axios/service";
 import css from '@/style/page/article/detail.module.css';
-import Md from "@/components/md";
+import Md from "@/components/markdown/md";
 import methods from "@/common/methosd";
 import { Link } from "react-router-dom";
 import { Top } from "@/components/top";

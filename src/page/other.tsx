@@ -1,4 +1,4 @@
-import Md from '@/components/md';
+import Md from '@/components/markdown/md';
 import React, { useEffect, useState } from 'react';
 import css from '@/style/page/other.module.css';
 import { useParams } from 'react-router';
@@ -10,7 +10,7 @@ const mdKMS = "## 激活说明\r\n  - KMS 激活有 180 天期限\r\n  - 默认�
 
 interface props {
   md?: string
-  h1: string
+  h1?: string
 }
 export default function Other(props: props) {
   let [md, setMd] = useState<string>('');
@@ -18,7 +18,7 @@ export default function Other(props: props) {
   let { name } = useParams<any>();
 
   useEffect(() => {
-    setH(name === 'kms' ? 'kms.ikurum.cn' : name === 'v2ray' ? '暂无端口开放' : props?.h1)
+    setH(name === 'kms' ? 'kms.ikurum.cn' : name === 'v2ray' ? '暂无端口开放' : (props?.h1 || ''))
     setMd(name === 'kms' ? mdKMS : name === 'v2ray' ? mdV2 : (props?.md || ''))
   }, [props, name]);
 

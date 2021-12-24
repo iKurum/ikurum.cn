@@ -1,5 +1,5 @@
 import React from 'react';
-import Md from '@/components/md';
+import Md from '@/components/markdown/md';
 import css from '@/style/page/tools/css.module.css';
 import Other from '../other';
 

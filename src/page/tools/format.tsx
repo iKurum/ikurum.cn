@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Md from '@/components/md';
+import Md from '@/components/markdown/md';
 import css from '@/style/page/tools/format.module.css';
 import Other from '../other';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit } from '@/components/edit';
+import { Edit } from '@/components/markdown/edit';
 import Other from '@/page/other';
 import css from '@/style/page/tools/markdown.module.css';
 

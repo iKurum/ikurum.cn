@@ -12,7 +12,7 @@ interface Number {
   ceil(arg1: number): number,
 }
 
-declare module "@/components/md" {
+declare module "@/components/markdown/md" {
   export function Md(props: any): JSX.Element
 }
 

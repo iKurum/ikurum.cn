@@ -2,7 +2,7 @@ import methods from "@/common/methosd";
 import React, { useCallback, useEffect, useRef, useState, useContext } from "react"
 import { Link, Routes, Route, useParams } from "react-router-dom";
 import port from "@/axios/service";
-import Md from "@/components/md";
+import Md from "@/components/markdown/md";
 import Detail from "./detail";
 import css from '@/style/page/article/list.module.css';
 import { TopContext } from "@/components/createContext";
