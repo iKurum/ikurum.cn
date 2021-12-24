@@ -1,5 +1,4 @@
 // // hack，在组件外部使用导航
-// const createHistory = require('history').createBrowserHistory;
+import { createBrowserHistory } from 'history';
 
-// export default createHistory();
-export { }
+export default createBrowserHistory();

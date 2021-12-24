@@ -1,5 +1,7 @@
+import React from 'react';
 import Md from '@/components/md';
 import css from '@/style/page/tools/css.module.css';
+import Other from '../other';
 
 const MdTs: React.FC<any> = Md as any;
 
@@ -55,7 +57,7 @@ export default function Css(props: any) {
   ];
 
   return <div className={css.page}>
-    <h1>{props?.name.split('_').join(' ').toUpperCase()}</h1>
+    <Other h1={props?.name.split('_').join(' ').toUpperCase()} />
     <div className={css.cont}>
       {list.map((item: any, index: number) => <div key={index} className={css['list-item']}>
         <div>

@@ -1,4 +1,4 @@
-// import history from '@/components/history';
+import history from '@/components/history';
 import { openMsg, destroyedMsg } from '@/components/message';
 import { open, close } from '@/components/modal';
 import { oSpin, cSpin } from '@/components/spin';
@@ -18,7 +18,7 @@ let methods: any = {
   /**
    * 页面跳转
    */
-  // goPage: (url: string) => history.push(url),
+  goPage: (url: string) => history.push(url),
 
   /**
    * 消息提示
