@@ -1,0 +1,31 @@
+.page {
+  padding: 0 30px;
+}
+
+.stitle {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stitle a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  box-shadow: 0 0 0 #d8d8d8;
+  transition: all .5s;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .9);
+  font-size: 16px;
+}
+
+.stitle a:hover {
+  box-shadow: 0 0 18px #d8d8d8;
+  color: #66ccff;
+}

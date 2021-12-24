@@ -1,0 +1,109 @@
+.page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, .9);
+  padding: 10px 10px 20px;
+}
+
+.file {
+  position: absolute;
+  top: -100px;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.imgBox {
+  position: relative;
+  border: 1px solid #66ccff;
+  width: 500px;
+  min-width: 500px;
+  height: 500px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.imgBox>div {
+  width: calc(100% + 10px);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.imgBox>div>button {
+  position: absolute;
+  bottom: 10px;
+}
+
+.imgBox>div>span {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.choosed {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.choosed::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.choosed button {
+  position: relative;
+  z-index: 2;
+}
+
+.choosed button:nth-child(1) {
+  margin-right: 20px;
+}
+
+.del:hover .choosed {
+  display: flex;
+}
+
+.btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.detail {
+  width: 500px;
+  min-width: 500px;
+  color: #999999;
+}
+
+.detail h2 {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background-color: #66ccff;
+}
+
+.detail p {
+  padding: 20px;
+}

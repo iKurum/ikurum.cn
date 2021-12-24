@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>ikurum.cn</title>
+    <link rel="stylesheet" type="text/css" href="/common.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="https://at.alicdn.com/t/font_1029472_2loyjwfke94.js"></script>
+    <script>
+      window.onload = () => {
+        document.onkeydown = e => {
+          e = e || Event;
+
+          let b = false;
+          // F5 ESC CTRL+R CTRL+C
+          if (e.keyCode === 116 || e.keyCode === 27 || (e.keyCode === 82 && e.ctrlKey) || (e.keyCode === 67 && e.ctrlKey)) {
+            b = true;
+          }
+
+          if (b) {
+            e.keyCode = 0;
+            e.cancelBubble = true;
+            return false;
+          }
+        }
+      }
+    </script>
+    <script type="module" src="/src/index.tsx"></script>
+
+  </body>
+</html>

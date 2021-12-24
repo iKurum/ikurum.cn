@@ -1,0 +1,27 @@
+.page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page h1 {
+  user-select: none;
+  cursor: pointer;
+  margin: 0 100px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  color: #666666;
+}
+
+@media screen and (max-width: 500px) {
+  .page h1 {
+    margin: 0;
+  }
+}
+
+.page h1:hover {
+  box-shadow: 0 0 20px #999999;
+}

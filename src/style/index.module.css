@@ -1,0 +1,38 @@
+html,
+body,
+div,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+#root {
+  font-size: 14px;
+  color: #333333;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  font-family: "PingFang SC", "Microsoft YaHei", 黑体, 宋体, sans-serif;
+  background-color: #FAFAFA;
+}
+
+::selection {
+  background-color: #d9d9d9;
+  color: #fafafa;
+}
+
+@media print {
+  body {
+    display: none;
+  }
+}
+
+/* iconfont */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

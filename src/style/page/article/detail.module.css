@@ -1,0 +1,66 @@
+.page {
+  margin: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    margin: 50px 10px;
+  }
+}
+
+.blm {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.blm button {
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.blm a {
+  color: #f1f1f1;
+}
+
+.arc_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.archive span {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.archive a {
+  display: inline-block;
+  padding: 4px;
+  margin-right: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.archive a:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 0;
+  border-bottom: 2px solid;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  bottom: 0;
+  left: 10%;
+}
+
+.archive span:hover>a:after {
+  border-bottom-color: #66ccff;
+}
+
+.cont {
+  background-color: rgba(255, 255, 255, .9);
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page>h1 {
+  width: 400px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #999999;
+}
+
+.page>div {
+  width: 100%;
+}

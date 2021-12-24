@@ -1,0 +1,105 @@
+.page {
+  user-select: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px 0 #333333;
+  cursor: pointer;
+}
+
+.icon {
+  color: #66ccff;
+  transform: rotateZ(45deg);
+}
+
+.icon_a {
+  color: #66ccff;
+}
+
+.page:hover .icon {
+  animation: hover_trans .8s linear;
+}
+
+@keyframes hover_trans {
+  0% {
+    transform: rotateZ(45deg);
+  }
+
+  25% {
+    transform: rotateZ(180deg);
+  }
+
+  50% {
+    transform: rotateZ(360deg);
+  }
+
+  100% {
+    transform: rotateZ(45deg);
+  }
+}
+
+.page ul {
+  list-style: none;
+  position: absolute;
+  bottom: 50px;
+  padding: 10px;
+}
+
+.li {
+  position: relative;
+  margin-top: 10px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon_li {
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.icon_li:hover {
+  color: #66ccff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .3);
+}
+
+.icon_li .li_i {
+  width: 30px;
+  height: 30px;
+}
+
+.icon_li>span {
+  position: absolute;
+  right: 110%;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+}
+
+.li_n {
+  left: 100%;
+  opacity: 0;
+}
+
+.li_a {
+  left: calc(-50% + 20px);
+  opacity: 1;
+}
