@@ -4,29 +4,11 @@ import { coy, prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import gfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import React, { useEffect, useState } from "react";
-import { marked } from 'marked';
-import hljs from "highlight.js";
-
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  // `highlight` example uses https://highlightjs.org
-  highlight: function (code, lang) {
-    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-    return hljs.highlight(code, { language }).value;
-  },
-  langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.
-  gfm: true, // 允许 GitHub标准的markdown.
-  pedantic: false, // 不纠正原始模型任何的不良行为和错误（默认为false）
-  sanitize: false, // 对输出进行过滤（清理），将忽略任何已经输入的html代码（标签）
-  tables: true, // 允许支持表格语法（该选项要求 gfm 为true）
-  breaks: false, // 允许回车换行（该选项要求 gfm 为true）
-  smartLists: true, // 使用比原生markdown更时髦的列表
-  smartypants: false, // 使用更为时髦的标点
-});
 
 const components = {
   code({ node, inline, className, children, ...props }) {
-    const match = /language-(\w+)/.exec(className || '')
+    const match = /language-(\w+)/.exec(className || '');
+    console.log('match', match);
     return !inline && match ? (
       <SyntaxHighlighter
         style={prism}
@@ -70,13 +52,12 @@ export default function Md(props) {
     overflowX: 'auto',
     backgroundColor: 'rgba(255, 255, 255, .9)',
   }}>
-    <div className="show-html" dangerouslySetInnerHTML={{ __html: marked.parse(detail) }} />
-    {/* <ReactMarkdown
+    <ReactMarkdown
       components={components}
       style={islist ? coy : prism}
       children={detail}
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[gfm]}
-    /> */}
+    />
   </div> : null;
 };

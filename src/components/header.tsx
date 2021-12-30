@@ -19,7 +19,6 @@ export const Header = () => {
     { name: 'V2ray', url: '/other/v2ray' },
     { name: '在线工具', url: '/tools' },
   ];
-  console.log('h',);
 
   useEffect(() => {
     if (!isGoSite) {
