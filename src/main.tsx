@@ -8,18 +8,8 @@ import { Modal } from '@/components/modal';
 import { BackgroundCanvas } from '@/components/backgroundCanvas';
 import { TopContext } from "@/components/createContext";
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-
-import NotFound from '@/components/notFound';
-
-import List from '@/page/article/list';
-import Home from '@/page/home';
-import Other from '@/page/other';
-import Tool from '@/page/tools/list';
+import { BrowserRouter } from "react-router-dom";
+import { SetRoutes } from './route/routes';
 
 import css from '@/style/main.module.css';
 
@@ -43,13 +33,7 @@ export const Main = () => {
           <Header />
           <div className={css.content} ref={contRef}>
             <TopContext.Provider value={goTop}>
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/article/*' element={<List />} />
-                <Route path='/other/:name' element={<Other />} />
-                <Route path='/tools/*' element={<Tool />} />
-                <Route path='*' element={<NotFound />} />
-              </Routes>
+              <SetRoutes />
             </TopContext.Provider>
           </div>
         </div>

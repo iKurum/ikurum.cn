@@ -127,8 +127,8 @@ let methods: any = {
       footer: true,
       ...obj,
       template: template,
-      ok: ok,
-      cancel: cancel,
+      onOk: ok,
+      onCancel: cancel,
     };
     open(obj);
   },

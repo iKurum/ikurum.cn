@@ -58,7 +58,7 @@ export default function Md(props) {
 
       aTagArr.forEach(e => {
         if (e.href.indexOf("_blank") > -1) {
-          e.setAttribute('href', e.href.replace(/\?_blank/, ''));
+          e.setAttribute('href', `/other_site?target=${e.href.replace(/_blank/, '')}`);
           e.setAttribute('target', '_blank');
         }
       });
