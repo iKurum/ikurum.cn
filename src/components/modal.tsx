@@ -1,6 +1,6 @@
-import methods from "@/common/methosd";
+import methods from "@common/methosd";
 import React, { useState } from "react";
-import css from '@/style/components/modal.module.css';
+import css from '@style/components/modal.module.css';
 
 let o: null | Function = null, c: null | Function = null;
 export function Modal() {

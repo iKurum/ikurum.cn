@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import css from "@/style/components/top.module.css";
+import css from "@style/components/top.module.css";
 
 interface props {
   menu: Array<any>
 }
+
 export function Top(props: props) {
   let [active, setActive] = useState(false);
 

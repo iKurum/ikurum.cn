@@ -1,9 +1,9 @@
 import Other from '@/page/other';
-import css from '@/style/page/tools/text.module.css';
+import css from '@style/page/tools/text.module.css';
 import React, { useEffect, useRef, useState } from 'react';
-import NotFound from '@/components/notFound';
+import NotFound from '@components/notFound';
 import port from '@/axios/service';
-import methods from '@/common/methosd';
+import methods from '@common/methosd';
 
 const md = "- 仅支持文字（不包括表格之类）\r\n- 不支持文字分段识别\r\n- 使用文字清晰的图片\r\n- 调用百度云接口\r\n";
 

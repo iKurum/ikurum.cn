@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import port from "@/axios/service";
 import { Link } from 'react-router-dom';
-import css from '@/style/components/header.module.css';
+import css from '@style/components/header.module.css';
 import { autoMenu } from '@/config';
 import { useQuery } from '@/route/getSearch';
-import methods from '@/common/methosd';
+import methods from '@common/methosd';
 
 export const Header = () => {
   const isGoSite = window.location.href.indexOf('other_site') !== -1 && !!useQuery('target');

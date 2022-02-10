@@ -1,4 +1,4 @@
-import methods from '@/common/methosd';
+import methods from '@common/methosd';
 import { root } from '@/config';
 
 const ROOT = root === 1 ? 'https://api.ikurum.cn/v1' : 'http://127.0.0.1:9091/v1';

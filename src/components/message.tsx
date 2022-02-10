@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import css from '@/style/components/message.module.css';
+import css from '@style/components/message.module.css';
 
 let o: any, d: any;
 export const Msg = () => {

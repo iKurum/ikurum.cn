@@ -1,4 +1,4 @@
-import methods from '@/common/methosd';
+import methods from '@common/methosd';
 import { useQuery } from '@/route/getSearch';
 import React, { useEffect } from 'react';
 

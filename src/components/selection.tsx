@@ -1,6 +1,6 @@
-import methods from '@/common/methosd';
+import methods from '@common/methosd';
 import React, { useEffect, useRef, useState } from 'react';
-import css from '@/style/components/selection.module.css';
+import css from '@style/components/selection.module.css';
 
 export const Selection = () => {
   let [txt, setTxt] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import css from '@/style/components/contextMenu.module.css';
+import css from '@style/components/contextMenu.module.css';
 
 export const ContextMenu = () => {
   let [isA, setIsA] = useState(false);

@@ -1,6 +1,6 @@
 import { Ajax } from './fetch';
 import { getApi } from './apis'; // 导入封装好的apis对象
-import methods from '@/common/methosd';
+import methods from '@common/methosd';
 let name: any = [];
 
 interface oparams {

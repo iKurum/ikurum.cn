@@ -24,11 +24,14 @@
       "@/*": [
         "src/*"
       ],
+      "@style/*": [
+        "src/style/*"
+      ],
+      "@common/*": [
+        "src/common/*"
+      ],
       "@components/*": [
         "src/components/*"
-      ],
-      "@nav/*": [
-        "src/nav/*"
       ],
       "@ts/*": [
         "src/d.ts/*"

@@ -1,14 +1,12 @@
-import methods from "@/common/methosd";
+import methods from "@common/methosd";
 import React, { useCallback, useEffect, useRef, useState, useContext } from "react"
 import { Link, Routes, Route, useParams } from "react-router-dom";
 import port from "@/axios/service";
-import Md from "@/components/markdown/md";
+import { Mdiv } from "@components/md";
 import Detail from "./detail";
-import css from '@/style/page/article/list.module.css';
-import { TopContext } from "@/components/createContext";
-import { Top } from "@/components/top";
-
-const MdTs: React.FC<any> = Md as any;
+import css from '@style/page/article/list.module.css';
+import { TopContext } from "@components/createContext";
+import { Top } from "@components/top";
 
 function List() {
   let [article, setArticle] = useState<any>(null);
@@ -78,7 +76,7 @@ function List() {
                 <span>{v.archive.split(',').map((item: string) => <span key={item}>{item}</span>)}</span>
               </p> : null}
               <div>
-                <MdTs data={v?.note} islist={true} />
+                <Mdiv data={v?.note} />
               </div>
             </div>
             <div style={{

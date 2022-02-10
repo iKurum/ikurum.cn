@@ -1,5 +1,5 @@
 import React from 'react';
-import css from '@/style/components/notFound404.module.css';
+import css from '@style/components/notFound404.module.css';
 
 export default function NotFound(props: any) {
   return <div className={css.page}>

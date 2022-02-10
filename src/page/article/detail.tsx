@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { useParams } from "react-router";
 import port from "@/axios/service";
-import css from '@/style/page/article/detail.module.css';
-import Md from "@/components/markdown/md";
-import methods from "@/common/methosd";
+import css from '@style/page/article/detail.module.css';
+import { Mdiv } from "@components/md";
+import methods from "@common/methosd";
 import { Link } from "react-router-dom";
-import { Top } from "@/components/top";
-import { TopContext } from "@/components/createContext";
-
-const MdTs: React.FC<any> = Md as any;
+import { Top } from "@components/top";
+import { TopContext } from "@components/createContext";
 
 export default function Detail() {
   let [detail, setDetail] = useState<any>(null);
@@ -58,7 +56,7 @@ export default function Detail() {
         </p> : null}
         <p>最后更新时间：{methods.formatDateTime(detail.upTime, 'yyyy-MM-dd HH:mm')}</p>
       </div>
-      <MdTs data={detail?.content} />
+      <Mdiv data={detail?.content} />
     </div>
     <Top menu={menu} />
   </div> : null;

@@ -1,9 +1,7 @@
 import React from 'react';
-import Md from '@/components/markdown/md';
-import css from '@/style/page/tools/css.module.css';
+import { Mdiv } from '@components/md';
+import css from '@style/page/tools/css.module.css';
 import Other from '../other';
-
-const MdTs: React.FC<any> = Md as any;
 
 export default function Css(props: any) {
   const list: any = [
@@ -61,7 +59,7 @@ export default function Css(props: any) {
     <div className={css.cont}>
       {list.map((item: any, index: number) => <div key={index} className={css['list-item']}>
         <div>
-          <MdTs data={"```css\r\n" + item.use + "\r\n```"} />
+          <Mdiv data={"```css\r\n" + item.use + "\r\n```"} />
         </div>
         <div>{item.cont(item)}</div>
       </div>)}

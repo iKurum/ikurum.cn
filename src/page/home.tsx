@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import css from '@/style/page/home.module.css';
-import { Calendar } from '@/components/calendar';
+import css from '@style/page/home.module.css';
+import { Calendar } from '@components/calendar';
 import port from "@/axios/service";
 
 export default function Home() {

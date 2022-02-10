@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import css from '@/style/components/spin.module.css';
+import css from '@style/components/spin.module.css';
 
 /**
  * 遮罩层组件

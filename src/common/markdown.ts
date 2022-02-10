@@ -1,4 +1,3 @@
-
 import * as markdownitEmoji from 'markdown-it-emoji'
 import * as markdownitSub from 'markdown-it-sub'
 import * as markdownitSup from 'markdown-it-sup'
@@ -13,7 +12,7 @@ import hljs from 'highlight.js'  // 引入highlight.js库
 import 'highlight.js/styles/github.css'  // 引入github风格的代码高亮样式
 import '@style/edit/alfluent.css'
 
-export const md: markdownIt = new markdownIt({
+export const markdIt: markdownIt = new markdownIt({
   linkify: true,
   typographer: true,
   quotes: '“”‘’',
@@ -38,19 +37,23 @@ export const md: markdownIt = new markdownIt({
       } catch (__) { }
     }
 
-    return '<pre class="hljs"><code>' + md.utils.escapeHtml(code) + '</code></pre>';
+    return '<pre class="hljs"><code>' +
+      markdIt.utils.escapeHtml(code) +
+      '</code></pre>';
   }
 })
-  .use(markdownitEmoji) // emoji 表情
-  .use(markdownitSub) // 下标
-  .use(markdownitSup) // 上标
-  .use(markdownitFootnote) // 脚注
-  .use(markdownitDeflist) // 定义列表
-  .use(markdownitAbbr) // 缩写
-  .use(markdownitIns) // 插入
-  .use(markdownitMark) // 标记
 
-md.core.ruler.push('wh-imgs', (state) => {
+// markdIt
+// .use(markdownitEmoji) // emoji 表情
+// .use(markdownitSub) // 下标
+// .use(markdownitSup) // 上标
+// .use(markdownitFootnote) // 脚注
+// .use(markdownitDeflist) // 定义列表
+// .use(markdownitAbbr) // 缩写
+// .use(markdownitIns) // 插入
+// .use(markdownitMark) // 标记
+
+markdIt.core.ruler.push('wh-imgs', (state) => {
   state.tokens.forEach((token: any) => {
     if (token.type === 'inline' && token.children) {
       token.children.map((item: any) => {

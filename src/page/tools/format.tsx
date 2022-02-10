@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Md from '@/components/markdown/md';
-import css from '@/style/page/tools/format.module.css';
+import { Mdiv } from '@components/md';
+import css from '@style/page/tools/format.module.css';
 import Other from '../other';
-
-const MdTs: React.FC<any> = Md as any;
 
 export default function Format(props: any) {
   let [text, setText] = useState<string>("");
@@ -19,6 +17,6 @@ export default function Format(props: any) {
       }
       setText(JSON.stringify(t, null, 4));
     }} />
-    {text && <MdTs data={"```json\r\n" + text} />}
+    {text && <Mdiv data={"```json\r\n" + text} />}
   </div>
 };
