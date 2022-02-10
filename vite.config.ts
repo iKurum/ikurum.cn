@@ -9,6 +9,12 @@ export default defineConfig({
   resolve: {
     alias: [{
       find: "@", replacement: resolve(__dirname, 'src'),
+    }, {
+      find: "@style", replacement: resolve(__dirname, 'src/style'),
+    }, {
+      find: "@components", replacement: resolve(__dirname, 'src/components'),
+    }, {
+      find: "@ts", replacement: resolve(__dirname, 'src/d.ts'),
     }],
     extensions: ['.js', '.json', '.ts', '.tsx', '.jsx']
   },
