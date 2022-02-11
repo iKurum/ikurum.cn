@@ -310,7 +310,6 @@ figure>table,
 }
 
 p {
-    margin: var(--margin-text);
     line-height: var(--line-height);
 }
 
