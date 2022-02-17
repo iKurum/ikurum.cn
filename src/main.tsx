@@ -1,17 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import { Header } from '@components/header';
-import { SpinComponent } from '@components/spin';
-import { ContextMenu } from '@components/contextMenu';
-import { Selection } from '@components/selection';
-import { Msg } from '@components/message';
-import { Modal } from '@components/modal';
-import { BackgroundCanvas } from '@components/backgroundCanvas';
-import { TopContext } from "@components/createContext";
+import { useEffect, useRef } from 'react';
+import { Header } from 'components/header';
+import { SpinComponent } from 'components/spin';
+import { ContextMenu } from 'components/contextMenu';
+import { Selection } from 'components/selection';
+import { Msg } from 'components/message';
+import { Modal } from 'components/modal';
+import { BackgroundCanvas } from 'components/backgroundCanvas';
+import { TopContext } from "components/createContext";
 
 import { BrowserRouter } from "react-router-dom";
 import { SetRoutes } from './route/routes';
 
-import css from '@style/main.module.css';
+import css from 'style/main.module.css';
 
 export const Main = () => {
   let contRef = useRef<HTMLDivElement>(null);

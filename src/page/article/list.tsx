@@ -1,12 +1,12 @@
-import methods from "@common/methosd";
-import React, { useCallback, useEffect, useRef, useState, useContext } from "react"
+import methods from "common/methosd";
+import { useCallback, useEffect, useRef, useState, useContext } from "react"
 import { Link, Routes, Route, useParams } from "react-router-dom";
 import port from "@/axios/service";
-import { Mdiv } from "@components/md";
+import { Mdiv } from "components/md";
 import Detail from "./detail";
-import css from '@style/page/article/list.module.css';
-import { TopContext } from "@components/createContext";
-import { Top } from "@components/top";
+import css from 'style/page/article/list.module.css';
+import { TopContext } from "components/createContext";
+import { Top } from "components/top";
 
 function List() {
   let [article, setArticle] = useState<any>(null);

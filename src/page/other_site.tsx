@@ -1,6 +1,6 @@
-import methods from '@common/methosd';
+import methods from 'common/methosd';
 import { useQuery } from '@/route/getSearch';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 function OtherSite() {
   let url = useQuery('target');
@@ -26,7 +26,7 @@ function OtherSite() {
           window.close();
         }
       )
-  }, []);
+  }, [url]);
 
   return url ? <></> : null;
 };

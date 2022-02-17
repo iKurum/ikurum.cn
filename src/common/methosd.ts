@@ -1,7 +1,7 @@
-import history from '@components/history';
-import { openMsg, destroyedMsg } from '@components/message';
-import { open, close } from '@components/modal';
-import { oSpin, cSpin } from '@components/spin';
+import history from 'components/history';
+import { openMsg, destroyedMsg } from 'components/message';
+import { open, close } from 'components/modal';
+import { oSpin, cSpin } from 'components/spin';
 import moment from "moment";
 
 let methods: any = {

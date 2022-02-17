@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { useParams } from "react-router";
 import port from "@/axios/service";
-import css from '@style/page/article/detail.module.css';
-import { Mdiv } from "@components/md";
-import methods from "@common/methosd";
+import css from 'style/page/article/detail.module.css';
+import { Mdiv } from "components/md";
+import methods from "common/methosd";
 import { Link } from "react-router-dom";
-import { Top } from "@components/top";
-import { TopContext } from "@components/createContext";
+import { Top } from "components/top";
+import { TopContext } from "components/createContext";
 
 export default function Detail() {
   let [detail, setDetail] = useState<any>(null);

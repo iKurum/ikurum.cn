@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import css from "@style/components/top.module.css";
+import { useState } from "react";
+import css from "style/components/top.module.css";
 
 interface props {
   menu: Array<any>

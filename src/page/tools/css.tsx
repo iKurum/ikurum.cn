@@ -1,6 +1,6 @@
 import React from 'react';
-import { Mdiv } from '@components/md';
-import css from '@style/page/tools/css.module.css';
+import { Mdiv } from 'components/md';
+import css from 'style/page/tools/css.module.css';
 import Other from '../other';
 
 export default function Css(props: any) {

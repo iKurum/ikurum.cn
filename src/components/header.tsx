@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import port from "@/axios/service";
 import { Link } from 'react-router-dom';
-import css from '@style/components/header.module.css';
+import css from 'style/components/header.module.css';
 import { autoMenu } from '@/config';
 import { useQuery } from '@/route/getSearch';
-import methods from '@common/methosd';
+import methods from 'common/methosd';
 
 export const Header = () => {
-  const isGoSite = window.location.href.indexOf('other_site') !== -1 && !!useQuery('target');
+  const query = !!useQuery('target')
+  const isGoSite = window.location.href.indexOf('other_site') !== -1 && query
 
   const [imageURL, setImageURL] = useState('');
   const [activeMenu, setActiveMenu] = useState(false);
@@ -39,7 +40,7 @@ export const Header = () => {
         setActiveMenu(true);
       }
     }
-  }, []);
+  }, [isGoSite]);
 
   return isGoSite ? null : <div className={css.page} style={{
     width: activeMenu ? '200px' : 0,

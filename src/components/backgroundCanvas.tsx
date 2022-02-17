@@ -1,6 +1,6 @@
 import methods from '@/common/methosd';
-import React, { useRef, useEffect } from 'react';
-import css from '@style/components/backgroundCanvas.module.css';
+import { useRef, useEffect } from 'react';
+import css from 'style/components/backgroundCanvas.module.css';
 
 const plugin = {
   minSpeedX: 0.1,

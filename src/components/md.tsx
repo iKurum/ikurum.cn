@@ -1,4 +1,4 @@
-import { markdIt } from "@common/markdown";
+import { markdIt } from "common/markdown";
 import React from "react";
 
 export const Mdiv: React.FC<{ data: string }> = ({ data }) => {

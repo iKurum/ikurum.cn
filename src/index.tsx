@@ -1,8 +1,7 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { Main } from '@/main';
+import { Main } from './main';
 import { setApi } from '@/axios/apis';
-import { setNumberPrototype } from '@common/setNumber';
+import { setNumberPrototype } from 'common/setNumber';
 
 console.log('初始化Api');
 setApi();

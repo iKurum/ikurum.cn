@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Routes, Route, useParams } from "react-router-dom";
 import OCR_Text from './text';
 import Css from './css';
 import Format from './format';
-import NotFound from '@components/notFound';
-import css from '@style/page/tools/list.module.css';
+import NotFound from 'components/notFound';
+import css from 'style/page/tools/list.module.css';
 
 function List() {
   const menu: any = [

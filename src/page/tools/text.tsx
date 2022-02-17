@@ -1,16 +1,16 @@
 import Other from '@/page/other';
-import css from '@style/page/tools/text.module.css';
-import React, { useEffect, useRef, useState } from 'react';
-import NotFound from '@components/notFound';
+import css from 'style/page/tools/text.module.css';
+import { useEffect, useRef, useState } from 'react';
+import NotFound from 'components/notFound';
 import port from '@/axios/service';
-import methods from '@common/methosd';
+import methods from 'common/methosd';
 
 const md = "- 仅支持文字（不包括表格之类）\r\n- 不支持文字分段识别\r\n- 使用文字清晰的图片\r\n- 调用百度云接口\r\n";
 
 export default function OCR_Text(props: any) {
   let [imgURL, setImgURL] = useState<string | null>(null);
   let [data, setData] = useState<any>(null);
-  let [dlist, setDlist] = useState<Array<any>>([]);
+  // let [dlist, setDlist] = useState<Array<any>>([]);
   let input = useRef<HTMLInputElement | null>(null);
   let im = useRef<Blob | null>(null)
 
@@ -29,9 +29,9 @@ export default function OCR_Text(props: any) {
     }
   };
 
-  useEffect(() => {
-    port.ocrList().then((res: any) => setDlist(res?.data || []))
-  }, []);
+  // useEffect(() => {
+  //   port.ocrList().then((res: any) => setDlist(res?.data || []))
+  // }, []);
 
   useEffect(() => {
     if (imgURL && im.current) {

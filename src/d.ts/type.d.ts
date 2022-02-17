@@ -5,6 +5,7 @@ declare module 'markdown-it-deflist'
 declare module 'markdown-it-abbr'
 declare module 'markdown-it-ins'
 declare module 'markdown-it-mark'
+declare module 'markdown-it-emoji'
 
 declare module 'react-dom'
 
@@ -22,10 +23,10 @@ interface Number {
   ceil(arg1: number): number,
 }
 
-declare module "@components/markdown/md" {
+declare module "components/markdown/md" {
   export function Md(props: any): JSX.Element
 }
 
-declare module "@components/calendar" {
+declare module "components/calendar" {
   export const Calendar: React.ForwardRefExoticComponent<React.RefAttributes<any>>
 }

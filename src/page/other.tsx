@@ -1,6 +1,6 @@
-import { Mdiv } from '@components/md';
-import React, { useEffect, useState } from 'react';
-import css from '@style/page/other.module.css';
+import { Mdiv } from 'components/md';
+import { useEffect, useState } from 'react';
+import css from 'style/page/other.module.css';
 import { useParams } from 'react-router';
 
 const mdV2 = "- 定期分享`vmess`\r\n- [私人服务器状态](https://v2ray.ikurum.cn?_blank)\r\n- [Project V官方网站](https://www.v2ray.com?_blank)，不能访问则需要魔法";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { Page } from '@style/components/calendar';
+import { Page } from 'style/components/calendar';
 
 export const Calendar = React.forwardRef((props, ref) => {
   const date = new Date();

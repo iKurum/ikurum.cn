@@ -10,7 +10,7 @@ import * as markdownitMark from 'markdown-it-mark'
 import markdownIt from 'markdown-it'
 import hljs from 'highlight.js'  // 引入highlight.js库
 import 'highlight.js/styles/github.css'  // 引入github风格的代码高亮样式
-import '@style/edit/alfluent.css'
+import 'style/edit/alfluent.css'
 
 export const markdIt: markdownIt = new markdownIt({
   linkify: true,
@@ -42,20 +42,19 @@ export const markdIt: markdownIt = new markdownIt({
       '</code></pre>';
   }
 })
-
-// markdIt
-// .use(markdownitEmoji) // emoji 表情
-// .use(markdownitSub) // 下标
-// .use(markdownitSup) // 上标
-// .use(markdownitFootnote) // 脚注
-// .use(markdownitDeflist) // 定义列表
-// .use(markdownitAbbr) // 缩写
-// .use(markdownitIns) // 插入
-// .use(markdownitMark) // 标记
+  .use(markdownitEmoji) // emoji 表情
+  .use(markdownitSub) // 下标
+  .use(markdownitSup) // 上标
+  .use(markdownitFootnote) // 脚注
+  .use(markdownitDeflist) // 定义列表
+  .use(markdownitAbbr) // 缩写
+  .use(markdownitIns) // 插入
+  .use(markdownitMark) // 标记
 
 markdIt.core.ruler.push('wh-imgs', (state) => {
   state.tokens.forEach((token: any) => {
     if (token.type === 'inline' && token.children) {
+      // eslint-disable-next-line array-callback-return
       token.children.map((item: any) => {
 
         if (item.tag === 'img') {
