@@ -13,6 +13,8 @@ import 'highlight.js/styles/github.css'  // 引入github风格的代码高亮样
 import 'style/edit/alfluent.css'
 
 export const markdIt: markdownIt = new markdownIt({
+  html: true,        // 在源码中启用 HTML 标签
+  breaks: true,        // 转换段落里的 '\n' 到 <br>
   linkify: true,
   typographer: true,
   quotes: '“”‘’',
