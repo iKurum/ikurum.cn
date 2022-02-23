@@ -8,7 +8,7 @@ export const Mdiv: React.FC<{ data: string }> = ({ data }) => {
     backgroundColor: 'rgba(255, 255, 255, .9)',
   }}>
     <div
-      id='wirte'
+      id='write'
       dangerouslySetInnerHTML={{ __html: markdIt.render(data) }}
     />
   </div>;
