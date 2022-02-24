@@ -11,6 +11,7 @@ import markdownIt from 'markdown-it'
 import hljs from 'highlight.js'  // 引入highlight.js库
 import 'highlight.js/styles/github.css'  // 引入github风格的代码高亮样式
 import 'style/edit/alfluent.css'
+import Token from 'markdown-it/lib/token'
 
 export const markdIt: markdownIt = new markdownIt({
   html: true,        // 在源码中启用 HTML 标签
@@ -53,11 +54,25 @@ export const markdIt: markdownIt = new markdownIt({
   .use(markdownitIns) // 插入
   .use(markdownitMark) // 标记
 
-markdIt.core.ruler.push('wh-imgs', (state) => {
+markdIt.core.ruler.push('wh-mine', (state) => {
+  let heading: Token | null = null
+
   state.tokens.forEach((token: any) => {
+    if (token.type === 'heading_open') {
+      heading = token
+    }
+
     if (token.type === 'inline' && token.children) {
-      // eslint-disable-next-line array-callback-return
-      token.children.map((item: any) => {
+      token.children.forEach((item: any) => {
+
+        if (item.type === 'text' && !!heading) {
+          // 初始化属性
+          item.attrs = item.attrs || []
+          let id = item.content.match(/^([\S\s]+)\s<#!([\S\s]+)>$/)
+
+          if (id && id[1]) item.content = id[1]
+          if (id && id[2]) heading.attrPush(['id', id[2]])
+        }
 
         if (item.tag === 'img') {
           // 初始化属性
@@ -65,8 +80,8 @@ markdIt.core.ruler.push('wh-imgs', (state) => {
 
           for (let i = 0; i < item.attrs.length; i++) {
             if (item.attrs[i].indexOf('src') !== -1) {
-              let src = item.attrs[i][1].split('#')[0]
-              let wh = item.attrs[i][1].split('#')[1]?.toLocaleLowerCase()?.split('x')
+              let src = item.attrs[i][1].split('#!')[0]
+              let wh = item.attrs[i][1].split('#!')[1]?.toLocaleLowerCase()?.split('x')
 
               if (wh) {
                 item.attrs[i][1] = src;
