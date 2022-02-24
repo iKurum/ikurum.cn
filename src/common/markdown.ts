@@ -56,39 +56,56 @@ export const markdIt: markdownIt = new markdownIt({
 
 markdIt.core.ruler.push('wh-mine', (state) => {
   let heading: Token | null = null
+  let paragraph: Token | null = null
 
-  state.tokens.forEach((token: any) => {
+  state.tokens.forEach(token => {
+    // 标题
     if (token.type === 'heading_open') {
       heading = token
     }
+    // p标签
+    if (token.type === 'paragraph_open') {
+      paragraph = token
+    }
 
     if (token.type === 'inline' && token.children) {
-      token.children.forEach((item: any) => {
+      token.children.forEach(item => {
 
+        // 标题设置 id
         if (item.type === 'text' && !!heading) {
-          // 初始化属性
           item.attrs = item.attrs || []
-          let id = item.content.match(/^([\S\s]+)\s<#!([\S\s]+)>$/)
+          let id = item.content.match(/^([\S\s]+)[\s]?<#!([\S\s]+)>$/)
 
           if (id && id[1]) item.content = id[1]
           if (id && id[2]) heading.attrPush(['id', id[2]])
         }
 
+        // 图片设置 宽高、居中
         if (item.tag === 'img') {
-          // 初始化属性
           item.attrs = item.attrs || []
-
           for (let i = 0; i < item.attrs.length; i++) {
             if (item.attrs[i].indexOf('src') !== -1) {
               let src = item.attrs[i][1].split('#!')[0]
-              let wh = item.attrs[i][1].split('#!')[1]?.toLocaleLowerCase()?.split('x')
+              let wh = item.attrs[i][1].split('#!')[1]?.toLowerCase()?.split('x')
 
-              if (wh) {
+              if (wh && wh.length) {
                 item.attrs[i][1] = src;
                 item.attrs.push([
                   'style',
                   `width: ${wh[0] ? `${wh[0]}px` : 'auto'}; 
-                  height: ${wh[1] ? `${wh[1]}px` : 'auto'};`
+                  height: ${wh[1] && !isNaN(Number(wh[1])) ?
+                    `${wh[1]}px` : 'auto'
+                  };
+                  text-align: ${wh[1] && isNaN(Number(wh[1])) ? wh[1] :
+                    (wh[2] || 'auto')
+                  }`
+                ])
+                if (paragraph) paragraph.attrPush([
+                  'style',
+                  `text-align: ${wh[0] && isNaN(Number(wh[0])) ? wh[0] :
+                    wh[1] && isNaN(Number(wh[1])) ? wh[1] :
+                      (wh[2] || 'auto')
+                  }`
                 ])
               }
 
