@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { // 用于设置模块名到基于baseUrl的路径映射
+      "@/*": [
+        "src/*"
+      ],
+      "style/*": [
+        "src/style/*"
+      ],
+      "common/*": [
+        "src/common/*"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "d.ts/*": [
+        "src/d.ts/*"
+      ]
+    }
+  }
+}
